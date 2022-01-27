@@ -1,0 +1,153 @@
+openapi: 3.0.0
+info:
+  version: 'v1'
+  title: 'Hospital API'
+  description: "This is an API for managing details of hospital."
+servers:
+  - url: 'https://e9e0529e-9062-48ad-8788-dbca9d21c8ca.mock.pstmn.io'
+paths:
+  /hospital:
+    get:
+      summary: Hospitals
+      operationId: getHospitals
+      tags:
+        - Hospitals
+      responses:
+        "200":
+          description: Hospitals
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HospitalListing"
+    post:
+      summary: Hospital
+      operationId: addHospitals
+      tags:
+        - Hospital
+      requestBody:
+        required: true
+        description: Hospital
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Hospital"
+      responses:
+        "201":
+          description: Hospital
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Hospital"
+  /hospital/{id}:
+    get:
+      summary: Hospital
+      operationId: getHospitals
+      parameters:
+        - name: id
+          in: path
+          description: The unique id.
+          required: true
+          schema:
+            type: string
+      tags:
+        - Hospital
+      responses:
+        "200":
+          description: Hospital
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Hospital"
+    put:
+      summary: Hospital
+      operationId: updateHospital
+      parameters:
+        - name: id
+          in: path
+          description: The unique id.
+          required: true
+          schema:
+            type: string
+      tags:
+        - Hospital
+      requestBody:
+        description: Hospital
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Hospital"
+      responses:
+        "204":
+          description: Hospital
+    delete:
+      summary: Hospital
+      operationId: deleteHospital
+      parameters:
+        - name: id
+          in: path
+          description: The unique id.
+          required: true
+          schema:
+            type: string
+      tags:
+        - Hospital
+      responses:
+        "204":
+          description: Hospital                                           
+components:
+  schemas:
+    HospitalListing:
+      type: array
+      items:
+        $ref: "#/components/schemas/Hospital"
+    Hospital:
+      type: object
+      required:
+        - id
+        - name
+        - speciality
+        - costWard
+        - typeGP
+        - rating
+        - contact
+        - covid
+        - availableBeds
+        - timings
+        - pincode
+        - army
+        - state
+        - district
+      properties:
+        id:
+          description: Unique identifier for the hospital
+          type: string
+        name:
+          description: The name of the hospital.
+          type: string
+        speciality:
+          description: The speciality of the hospital.
+          type: string
+        costWard:
+          description: "Cost of a single ward"
+          type: integer
+        typeGP:
+          description: "Wether the hospital is Private or Government."
+          type: string
+        rating:
+          type: integer
+        contact:
+          type: string
+        covid:
+          type: boolean
+        availableBeds:
+          type: integer
+        timings:
+          type: string    
+        pincode:
+          type: integer      
+        army:
+          type: boolean  
+        district:
+          type: string
+        state: 
+          type: string         
