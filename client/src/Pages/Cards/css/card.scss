@@ -1,3 +1,55 @@
 .card{
-    background-color: blue;
+    background-color: #dddddd;
+    box-shadow: 5px 8px 13px rgba(109, 122, 76, 0.43);
+    border-radius: 5px;
+    margin: auto;
+    
+    width: 90vw;
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+
+    .subtitle{
+        font-family: 'Roboto',sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 20px;
+        /* or 133% */
+        letter-spacing: 0.02em;
+        color: #757575;
+    }
+    .description{
+        font-family: 'Roboto',sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 20px;
+        /* or 133% */
+        letter-spacing: 0.02em;
+        color: #858484;
+    }
+    .left{
+        width: 60%;
+        h1{
+            font-family: Anton;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 64px;
+            font-size: 48px;
+    
+            letter-spacing: 0.09em;
+            color: #6D7A4C;
+            margin: 0px;
+        }
+    }
+    .right{
+        width: 40%;
+        .img{
+            background-color: #C4C4C4;
+            height: 100%;
+        }
+    }
+    
 }
