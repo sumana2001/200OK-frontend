@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
     margin: 0px;
-    background-color: #BCC6A7;
+    background-color: #dddddd;
   
     height: 80px;
-  
+    width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    z-index: 100;
+    box-shadow: 5px 8px 13px rgba(109, 122, 76, 0.274);
 
     h3{
         font-family: 'Anton', sans-serif;
@@ -26,15 +34,13 @@ header{
             margin: 10px;
             display: block;
             font-family: 'Roboto', sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 18 px;
-            line-height: 30px;
+            letter-spacing: 0.07em;
+            font-weight: 500;
              /* or 178% */
                 
             letter-spacing: 0.015em;
 
-            color: #757575;
+            color: black;
         }
     }
 

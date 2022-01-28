@@ -38,7 +38,7 @@ const Body = () => {
                             <input type="text" name="Pincode" />
                         </label><br />
                     </form>
-                    <button onClick={()=>{fetch_hospital()}} >search</button>
+                    <button onClick={()=>{fetch_hospital()}} >Search</button>
                 </div>
                 <div className='right'>
                     <img src={illustation} alt='image_loading_error'></img>

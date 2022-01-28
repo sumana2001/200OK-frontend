@@ -7,7 +7,7 @@ const Showcards = (props) => {
             <div className='hr' />
             <h1>HOSPITALS</h1>
             <Cards items={props.items} />
-
+            
         </div>
     );
 }

@@ -1,5 +1,5 @@
 .body {
-  background-color: #F1F0EC;
+  margin-top: 20px;
   padding-left: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7,14 +7,78 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .body .left {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 50vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4%;
+}
+
+.body .left h1 {
+  font-family: Anton;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 42px;
+  line-height: 64px;
+  /* or 133% */
+  letter-spacing: 0.07em;
+  -webkit-font-feature-settings: 'liga' off;
+          font-feature-settings: 'liga' off;
+  color: #6D7A4C;
+}
+
+.body .left form label {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+  /* or 178% */
+  letter-spacing: 0.015em;
+  color: #757575;
+}
+
+.body .left form label input {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  margin-left: 5px;
+  background: #F1F0EC;
+  border: 2px solid #757575;
+  border-radius: 11px;
+}
+
+.body .left button {
+  background: #F1F0EC;
+  border: 2px solid #757575;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22);
+  border-radius: 11px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: #757575;
+  /* or 178% */
+  text-align: center;
+  letter-spacing: 0.015em;
+  margin: auto;
+  margin-top: 2%;
+  width: 160px;
+  height: 40px;
+  -webkit-transform: translateX(-130px);
+          transform: translateX(-130px);
 }
 
 .body .right {
