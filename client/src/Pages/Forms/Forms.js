@@ -1,26 +1,72 @@
 import React from 'react'
+import { useState } from 'react/cjs/react.development';
 import './css/Forms.css'
 const Forms = () => {
-    const [items, setItems] = useState([]);
-    const [Dataisloaded, setDataisloaded] = useState(false);
-
+    
+    const [hospital,setHopsital]=useState({});
+    
     const [name,setName]=useState("");
     const [speciality,setSpeciality]=useState("");
-    const [costWard,setCostWard]=useState("");
+    const [costWard,setCostWard]=useState(0);
     const [typeGP,setTypeGP]=useState("");
-    const [rating,setRating]=useState("");
+    const [rating,setRating]=useState(0);
     const [contact,setContact]=useState("");
     const [covid,setCovid]=useState(false);
-    const [availableBeds,setAvailableBeds]=useState("");
+    const [availableBeds,setAvailableBeds]=useState(0);
     const [timings,setTimings]=useState("");
-    const [pincode,setPincode]=useState("");
+    const [pincode,setPincode]=useState(0);
     const [army,setArmy]=useState(false);
     const [district,setDistrict]=useState("");
     const [state,setState]=useState("");
-
+    
+    const [csrf,setCsrf]=useState("");
 
     function add_hospital() {
-        
+        fetch(`http://127.0.0.1:8000/csrf/`, {
+            credentials: 'include',
+          }).then((res)=>{
+              return res.json();
+          }).then((res)=>{
+              setCsrf("csrfToken="+res.csrfToken);
+              console.log("csrfToken="+res.csrfToken);
+              console.log(csrf);
+          });
+
+        let address="";
+        address=address.concat(district,",",state);
+        setHopsital(
+            {
+                "hname": name,
+                "speciality": speciality,
+                "costWard": costWard,
+                "rating": rating,
+                "typeGP": typeGP,
+                "contact": contact,
+                "covid": covid,
+                "army": army,
+                "availableBeds": availableBeds,
+                "State": state,
+                "District": district,
+                "pincode": pincode,
+                "timings": timings,
+                "Address": address,
+            }
+        )
+
+        var url="http://127.0.0.1:8000/addHosp/"
+
+        const requestOptions = {
+            method: 'POST',
+            headers: { 
+                        'Content-Type': 'application/json',
+                        'withCredentials': 'true',
+                     },
+            body: JSON.stringify(hospital)
+        };
+        fetch(url,requestOptions).then((res)=>{
+            console.log(res);
+        })
+
     }
     return (
         <div className='form'>
@@ -59,15 +105,8 @@ const Forms = () => {
                 <tr>
                     <td htmlFor="typeGP">Government/Private : </td>
                     <td>
-                    Government <input type="radio" autoComplete="off" name="typeGP" />
-                    Private <input type="radio" autoComplete="off" name="typeGP" />
-                    </td>
-                    <td>
-                    <input type="text" name="" autoComplete="off" placeholder='Hospital Name' onChange={
-                                    (e)=>{
-                                        set(e.target.value);
-                                    }
-                                } />
+                    Government <input type="radio" autoComplete="off" onChange={()=>{setTypeGP("Government")}} name="typeGP" />
+                    Private <input type="radio" autoComplete="off" onChange={()=>{setTypeGP("Private")}} name="typeGP" />
                     </td>
                 </tr>
                 <tr>
@@ -75,7 +114,7 @@ const Forms = () => {
                     <td>
                     <input type="text" name="rating" autoComplete="off" placeholder='5' onChange={
                                     (e)=>{
-                                        setRating(e.target.value);
+                                        setRating(parseInt(e.target.value));
                                     }
                                 } />
                     </td>
@@ -83,7 +122,7 @@ const Forms = () => {
                 <tr>
                     <td htmlFor="contact">Contact : </td>
                     <td>
-                    <input type="text" name="tel" autoComplete="off" placeholder='9999xxxx10' onChange={
+                    <input type="tel" name="contact" autoComplete="off" placeholder='9999xxxx10' onChange={
                                     (e)=>{
                                         setContact(e.target.value);
                                     }
@@ -112,7 +151,7 @@ const Forms = () => {
                     <td>
                     <input type="text" name="availableBeds" autoComplete="off" placeholder='150' onChange={
                                     (e)=>{
-                                        setAvailableBeds(e.target.value);
+                                        setAvailableBeds(parseInt(e.target.value));
                                     }
                                 } />
                     </td>
@@ -132,7 +171,7 @@ const Forms = () => {
                     <td>
                     <input type="text" name="pincode" autoComplete="off" placeholder='110001' onChange={
                                     (e)=>{
-                                        setPincode(e.target.value);
+                                        setPincode(parseInt(e.target.value));
                                     }
                                 } />
                     </td>
@@ -169,7 +208,7 @@ const Forms = () => {
                     <td>
                     <input type="text" name="district" autoComplete="off" placeholder='North Delhi' onChange={
                                     (e)=>{
-                                        setState(e.target.value);
+                                        setDistrict(e.target.value);
                                     }
                                 } />
                     </td>
