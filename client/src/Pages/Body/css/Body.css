@@ -1,4 +1,35 @@
 .body {
-  background-color: azure;
+  background-color: #F1F0EC;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.body .left {
+  display: block;
+  width: 50vw;
+}
+
+.body .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50vw;
+}
+
+.body .right img {
+  height: 300px;
 }
 /*# sourceMappingURL=Body.css.map */
