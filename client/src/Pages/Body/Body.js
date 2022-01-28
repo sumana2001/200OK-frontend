@@ -9,7 +9,7 @@ const Body = () => {
     const [Dataisloaded,setDataisloaded]=useState(false);
 
     function fetch_hospital() {
-        var url = "http://127.0.0.1:8000/";
+        var url = "https://hospitalapisamplehost1.herokuapp.com/";
 
         fetch(url).then((res) => {
             return res.json();
