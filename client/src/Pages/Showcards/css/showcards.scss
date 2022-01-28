@@ -1,0 +1,22 @@
+.Showcards{
+    margin-top: 20px;
+    .hr{
+        border-top: 2px dashed #6D7A4C;
+        margin:auto;
+        width: 95vw;
+    }
+    h1{
+        text-align: center;
+        font-family: Anton;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 96px;
+        line-height: 64px;
+        /* or 67% */
+
+        text-align: center;
+        letter-spacing: 0.07em;
+        font-feature-settings: 'liga' off;
+        color: #6D7A4C;
+    }
+}

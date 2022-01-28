@@ -1,1 +1,25 @@
-/* No CSS *//*# sourceMappingURL=Showcards.css.map */
+.Showcards {
+  margin-top: 20px;
+}
+
+.Showcards .hr {
+  border-top: 2px dashed #6D7A4C;
+  margin: auto;
+  width: 95vw;
+}
+
+.Showcards h1 {
+  text-align: center;
+  font-family: Anton;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 96px;
+  line-height: 64px;
+  /* or 67% */
+  text-align: center;
+  letter-spacing: 0.07em;
+  -webkit-font-feature-settings: 'liga' off;
+          font-feature-settings: 'liga' off;
+  color: #6D7A4C;
+}
+/*# sourceMappingURL=showcards.css.map */

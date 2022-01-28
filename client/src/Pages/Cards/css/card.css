@@ -4,6 +4,7 @@
           box-shadow: 5px 8px 13px rgba(109, 122, 76, 0.43);
   border-radius: 5px;
   margin: auto;
+  margin-top: 40px;
   width: 90vw;
   padding: 3%;
   display: -webkit-box;
@@ -12,6 +13,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.card h1 {
+  text-align: left;
 }
 
 .card .subtitle {
