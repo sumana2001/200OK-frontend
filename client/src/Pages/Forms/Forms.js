@@ -83,7 +83,7 @@ const Forms = () => {
                 <tr>
                     <td htmlFor="contact">Contact : </td>
                     <td>
-                    <input type="text" name="tel" autoComplete="off" placeholder='9999xxxx10' onChange={
+                    <input type="tel" name="contact" autoComplete="off" placeholder='9999xxxx10' onChange={
                                     (e)=>{
                                         setContact(e.target.value);
                                     }
