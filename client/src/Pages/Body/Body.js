@@ -13,15 +13,17 @@ const Body = () => {
     const [pin,setpin]=useState("");
 
     function fetch_hospital() {
-        var url = "http://127.0.0.1:8000/";
-        url=url.concat(state);
+        var url = "http://127.0.0.1:8000/hospital/";
+        if(state||district||pin)
+            url=url.concat(state,district,pin);
+
         console.log(url);
-    
         fetch(url).then((res) => {
             return res.json();
         }).then((res) => {
             setDataisloaded(true);
             setItems(res);
+            console.log(res);
         })
     }
 
@@ -38,7 +40,10 @@ const Body = () => {
                             <td>
                                 <input type="text" name="State" onChange={
                                     (e)=>{
-                                        setState(e.target.value);
+                                        if(e.target.value)
+                                            setState("?state="+e.target.value+"&");
+                                        else
+                                            setState('');
                                     }
                                 } />
                             </td>
@@ -50,7 +55,10 @@ const Body = () => {
                             <td>
                                 <input type="text" name="District" onChange={
                                     (e)=>{
-                                        setDistrict(e.target.value)
+                                        if(e.target.value)
+                                            setDistrict("?district="+e.target.value+"&");
+                                        else
+                                            setDistrict('');
                                     }
                                 } />
                             </td>
@@ -62,7 +70,10 @@ const Body = () => {
                             <td>
                                 <input type="text" name="Pincode" onChange={
                                     (e)=>{
-                                        setpin(e.target.value);
+                                        if(e.target.value)
+                                            setpin("?pincode="+e.target.value+"&");
+                                        else
+                                            setpin('');
                                     }
                                 } />
                             </td>

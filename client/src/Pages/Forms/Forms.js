@@ -3,12 +3,12 @@ import { useState } from 'react/cjs/react.development';
 import './css/Forms.css'
 const Forms = () => {
     
-    const [hospital,setHopsital]=useState({});
+    const [hospital,setHopsital]=useState();
     
     const [name,setName]=useState("");
     const [speciality,setSpeciality]=useState("");
     const [costWard,setCostWard]=useState(0);
-    const [typeGP,setTypeGP]=useState("");
+    const [typeGP,setTypeGP]=useState(false);
     const [rating,setRating]=useState(0);
     const [contact,setContact]=useState("");
     const [covid,setCovid]=useState(false);
@@ -19,15 +19,11 @@ const Forms = () => {
     const [district,setDistrict]=useState("");
     const [state,setState]=useState("");
     
-    const [csrf,setCsrf]=useState("");
 
-    function add_hospital() {
-
-        let address="";
-        address=address.concat(district,",",state);
+    function set_hospital(){
         setHopsital(
             {
-                "hname": name,
+                "name": name,
                 "speciality": speciality,
                 "costWard": costWard,
                 "rating": rating,
@@ -36,16 +32,17 @@ const Forms = () => {
                 "covid": covid,
                 "army": army,
                 "availableBeds": availableBeds,
-                "State": state,
-                "District": district,
+                "state": state,
+                "district": district,
                 "pincode": pincode,
                 "timings": timings,
-                "Address": address,
             }
-        )
+        );
+    }
 
-        var url="http://127.0.0.1:8000/addHosp/";
-        console.log(hospital);
+    function add_hospital() {
+        
+        var url="http://127.0.0.1:8000/hospital/";
         const requestOptions = {
             method: 'POST',
             headers: { 
@@ -53,6 +50,9 @@ const Forms = () => {
                      },
             body: JSON.stringify(hospital)
         };
+
+        console.log('fetching');
+
         fetch(url,requestOptions).then((res)=>{
             console.log(res);
         })
@@ -95,8 +95,8 @@ const Forms = () => {
                 <tr>
                     <td htmlFor="typeGP">Government/Private : </td>
                     <td>
-                    Government <input type="radio" autoComplete="off" onChange={()=>{setTypeGP("Government")}} name="typeGP" />
-                    Private <input type="radio" autoComplete="off" onChange={()=>{setTypeGP("Private")}} name="typeGP" />
+                    Government <input type="radio" autoComplete="off" onChange={()=>{setTypeGP(true)}} name="typeGP" />
+                    Private <input type="radio" autoComplete="off" onChange={()=>{setTypeGP(false)}} name="typeGP" />
                     </td>
                 </tr>
                 <tr>
@@ -205,8 +205,11 @@ const Forms = () => {
                 </tr>
             </table>
             <button onClick={()=>{
+                set_hospital();
+            }}>Create Request</button>
+            {hospital?<button onClick={()=>{
                 add_hospital();
-            }}>Submit</button>
+            }}>Submit</button>:''}
 
         </div>
     )

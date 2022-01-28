@@ -5,11 +5,10 @@ const Card = (props) => {
     const items=props.items;
 
     function hosptial_mapping(item) {
-        console.log(item);
         return (
             <div className="card">
                 <div className='left'>
-                    <h1>{item.hname}</h1>
+                    <h1>{item.name}</h1>
                     <div className='speciality'>
                         <div className='subtitle'>
                             Speciality  :
@@ -75,7 +74,7 @@ const Card = (props) => {
                             Address :
                         </span>
                         <span className='description'>
-                            {item.Address}
+                            {item.district+', '+item.state}
                         </span>
                     </div>
                     <div className='pincode'>

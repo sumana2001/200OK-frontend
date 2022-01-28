@@ -19,4 +19,48 @@
         font-feature-settings: 'liga' off;
         color: #6D7A4C;
     }
+    .filters{
+        width: 95vw;
+        
+        display: flex;
+        flex-direction: row-reverse;
+        margin: auto;
+
+        button{
+            font-family: Anton;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 52px;
+
+            text-align: right;
+            letter-spacing: 0.07em;
+
+            color: #6D7A4C;
+
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            border-bottom: 2px solid #6D7A4C;
+        }
+        .filter{
+            
+            ul{
+                li{
+                    list-style: none;
+
+                    font-family: Anton;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 20px;
+
+                    text-align: right;
+                    letter-spacing: 0.04em;
+
+                    color: #6D7A4C;
+                }
+            }
+        }
+    }
 }

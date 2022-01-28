@@ -22,4 +22,42 @@
           font-feature-settings: 'liga' off;
   color: #6D7A4C;
 }
+
+.Showcards .filters {
+  width: 95vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  margin: auto;
+}
+
+.Showcards .filters button {
+  font-family: Anton;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 52px;
+  text-align: right;
+  letter-spacing: 0.07em;
+  color: #6D7A4C;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px solid #6D7A4C;
+}
+
+.Showcards .filters .filter ul li {
+  list-style: none;
+  font-family: Anton;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: right;
+  letter-spacing: 0.04em;
+  color: #6D7A4C;
+}
 /*# sourceMappingURL=Showcards.css.map */
