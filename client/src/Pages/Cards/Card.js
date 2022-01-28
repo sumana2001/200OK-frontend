@@ -85,7 +85,7 @@ const Card = (props) => {
 
             </div>
             <div className='right'>
-                <div className='imgage'>image of hospital</div>
+                <div className='image'></div>
                 <div className='Rating'>
                     <span className='subtitle'>
                         Rating : 

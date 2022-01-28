@@ -5,7 +5,21 @@
     // margin-bottom: 100px;
     // margin-right: 150px;
     // margin-left: 20px;
-    height: 150px;
-    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .left{
+        display: block;
+        width: 50vw;
+    }
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50vw;
+        img{
+            height: 300px;
+        }
+    }
 
 }
