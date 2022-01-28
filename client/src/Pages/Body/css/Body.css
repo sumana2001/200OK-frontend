@@ -1,5 +1,6 @@
 .body {
   background-color: #F1F0EC;
+  padding-left: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
