@@ -8,7 +8,7 @@ import json
 def allHosp(request):
     items = Hosp.objects.values()
     data = list(items)
-    print(data)
+    # print(data)
     response = json.dumps(data)
     return HttpResponse(response, content_type="application/json", status=203)
 
