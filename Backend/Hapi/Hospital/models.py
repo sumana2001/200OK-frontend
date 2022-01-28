@@ -16,7 +16,7 @@ class Hosp(models.Model):
     availableBeds=models.IntegerField(default=0)
     State = models.CharField(max_length=50, default="")
     District = models.CharField(max_length=50, default="")
-    City= models.CharField(max_length=50, default="")
+    # City= models.CharField(max_length=50, default="")
     pincode=models.IntegerField(default=0)
     timings=models.CharField(max_length=50, default="")
     Address=models.CharField(max_length=300, default="")
