@@ -1,4 +1,4 @@
-import './css/showcards.css'
+import './css/Showcards.css'
 import Cards from '../Cards/Card';
 
 const Showcards = (props) => {
