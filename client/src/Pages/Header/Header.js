@@ -14,7 +14,7 @@ const Header = () => {
                     <li>GITHUB</li>
                 </ul>
             </div>
-            <h3>Admin</h3>
+            <h3><a href='http://127.0.0.1:8000/admin'>Admin</a></h3>
         </header>
         </>
      );

@@ -22,15 +22,6 @@ const Forms = () => {
     const [csrf,setCsrf]=useState("");
 
     function add_hospital() {
-        fetch(`http://127.0.0.1:8000/csrf/`, {
-            credentials: 'include',
-          }).then((res)=>{
-              return res.json();
-          }).then((res)=>{
-              setCsrf("csrfToken="+res.csrfToken);
-              console.log("csrfToken="+res.csrfToken);
-              console.log(csrf);
-          });
 
         let address="";
         address=address.concat(district,",",state);
@@ -59,7 +50,8 @@ const Forms = () => {
             method: 'POST',
             headers: { 
                         'Content-Type': 'application/json',
-                        'withCredentials': 'true',
+                        // 'withCredentials': 'true',
+                        // 'Access-Control-Allow-Credentials': 'true',
                      },
             body: JSON.stringify(hospital)
         };
@@ -214,7 +206,7 @@ const Forms = () => {
                     </td>
                 </tr>
             </table>
-            <button type="submit" onClick={()=>{
+            <button onClick={()=>{
                 add_hospital();
             }}>Submit</button>
 
