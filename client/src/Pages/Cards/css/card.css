@@ -58,12 +58,9 @@
   margin: 0px;
 }
 
-.card .right {
-  width: 40%;
-}
-
-.card .right .image {
-  background-color: #C4C4C4;
-  height: 100%;
+.card .right img {
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 5px 7px rgba(109, 122, 76, 0.267);
+          box-shadow: 3px 5px 7px rgba(109, 122, 76, 0.267);
 }
 /*# sourceMappingURL=card.css.map */

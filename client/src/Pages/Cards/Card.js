@@ -89,7 +89,7 @@ const Card = (props) => {
 
                 </div>
                 <div className='right'>
-                    <div className='image'> image</div>
+                    <div className='image'><img src='https://mediglobus.com/wp-content/uploads/2017/11/fortis-clinic44.jpg' alt='error_loading'></img></div>
                     <div className='Rating'>
                         <span className='subtitle'>
                             Rating :

@@ -50,11 +50,10 @@
         }
     }
     .right{
-        width: 40%;
-        .image{
-            background-color: #C4C4C4;
-            height: 100%;
-        }
+       img{
+           border-radius: 5px;
+           box-shadow: 3px 5px 7px rgba(109, 122, 76, 0.267);
+       }
     }
     
 }

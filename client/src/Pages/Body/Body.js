@@ -8,15 +8,20 @@ const Body = () => {
     const [items, setItems] = useState([]);
     const [Dataisloaded, setDataisloaded] = useState(false);
 
-    function fetch_hospital() {
-        var url = "https://hospitalapisamplehost1.herokuapp.com/";
+    const [state,setState]=useState("");
+    const [district,setDistrict]=useState("");
+    const [pin,setpin]=useState("");
 
+    function fetch_hospital() {
+        var url = "http://127.0.0.1:8000/";
+        url=url.concat(state);
+        console.log(url);
+    
         fetch(url).then((res) => {
             return res.json();
         }).then((res) => {
             setDataisloaded(true);
             setItems(res);
-            console.log(res);
         })
     }
 
@@ -31,7 +36,11 @@ const Body = () => {
                                 State :
                             </td>
                             <td>
-                                <input type="text" name="State" />
+                                <input type="text" name="State" onChange={
+                                    (e)=>{
+                                        setState(e.target.value);
+                                    }
+                                } />
                             </td>
                         </tr>
                         <tr>
@@ -39,7 +48,11 @@ const Body = () => {
                                 District :
                             </td>
                             <td>
-                                <input type="text" name="District" />
+                                <input type="text" name="District" onChange={
+                                    (e)=>{
+                                        setDistrict(e.target.value)
+                                    }
+                                } />
                             </td>
                         </tr>
                         <tr>
@@ -47,7 +60,11 @@ const Body = () => {
                                 Pincode :
                             </td>
                             <td>
-                                <input type="text" name="Pincode" />
+                                <input type="text" name="Pincode" onChange={
+                                    (e)=>{
+                                        setpin(e.target.value);
+                                    }
+                                } />
                             </td>
                         </tr>
                     </table>
