@@ -23,8 +23,8 @@
             color: #6D7A4C;
         }
 
-        form{
-            label{
+        table{
+            tr{
                 font-family: "Roboto";
                 font-style: normal;
                 font-weight: normal;
@@ -36,9 +36,10 @@
 
                 color: #757575;
                 input{
-                    font-family: "Roboto";
+                    font-family: 'Roboto',sans-serif;
                     font-style: normal;
                     font-weight: normal;
+                    text-align: center;
                     font-size: 16px;
 
                     margin-left: 5px;
@@ -46,6 +47,8 @@
                     background: #F1F0EC;
                     border: 2px solid #757575;
                     border-radius: 11px;
+                    
+                    color: #757575
                 }
             }
         }
@@ -68,9 +71,11 @@
             
             margin: auto;
             margin-top: 2%;
-            width: 160px;
-            height: 40px;
+            width: 140px;
+            height: 35px;
             transform: translateX(-130px);
+
+            cursor: pointer;
         }
     }
     .right{

@@ -37,7 +37,7 @@
   color: #6D7A4C;
 }
 
-.body .left form label {
+.body .left table tr {
   font-family: "Roboto";
   font-style: normal;
   font-weight: normal;
@@ -48,15 +48,17 @@
   color: #757575;
 }
 
-.body .left form label input {
-  font-family: "Roboto";
+.body .left table tr input {
+  font-family: 'Roboto',sans-serif;
   font-style: normal;
   font-weight: normal;
+  text-align: center;
   font-size: 16px;
   margin-left: 5px;
   background: #F1F0EC;
   border: 2px solid #757575;
   border-radius: 11px;
+  color: #757575;
 }
 
 .body .left button {
@@ -75,10 +77,11 @@
   letter-spacing: 0.015em;
   margin: auto;
   margin-top: 2%;
-  width: 160px;
-  height: 40px;
+  width: 140px;
+  height: 35px;
   -webkit-transform: translateX(-130px);
           transform: translateX(-130px);
+  cursor: pointer;
 }
 
 .body .right {

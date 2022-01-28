@@ -31,7 +31,7 @@ header{
         width: 60vw;
 
         li{
-            margin: 10px;
+            margin: 20px;
             display: block;
             font-family: 'Roboto', sans-serif;
             letter-spacing: 0.07em;
@@ -41,6 +41,16 @@ header{
             letter-spacing: 0.015em;
 
             color: black;
+            a{
+                text-decoration: none;
+                color: black;
+                transition-property: all;
+                transition-duration: 300ms;
+            }
+            a:hover{
+                color: grey;
+            }
+            
         }
     }
 

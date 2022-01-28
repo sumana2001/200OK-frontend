@@ -1,1 +1,76 @@
-/* No CSS *//*# sourceMappingURL=Forms.css.map */
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+.form h1 {
+  font-family: Anton;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 42px;
+  line-height: 64px;
+  /* or 133% */
+  letter-spacing: 0.07em;
+  -webkit-font-feature-settings: 'liga' off;
+          font-feature-settings: 'liga' off;
+  color: #6D7A4C;
+}
+
+.form table tr td {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+  /* or 178% */
+  letter-spacing: 0.015em;
+  width: 300px;
+  color: #757575;
+  padding: 5px;
+}
+
+.form table tr td input {
+  font-family: 'Roboto',sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  font-size: 16px;
+  margin-left: 5px;
+  background: #F1F0EC;
+  border: 2px solid #757575;
+  border-radius: 11px;
+  color: #757575;
+}
+
+.form button {
+  background: #F1F0EC;
+  border: 2px solid #757575;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22);
+  border-radius: 11px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: #757575;
+  /* or 178% */
+  text-align: center;
+  letter-spacing: 0.015em;
+  margin: auto;
+  margin-top: 2%;
+  width: 160px;
+  height: 40px;
+}
+/*# sourceMappingURL=Forms.css.map */

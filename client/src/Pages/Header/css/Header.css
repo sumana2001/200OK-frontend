@@ -41,7 +41,7 @@ header ul {
 }
 
 header ul li {
-  margin: 10px;
+  margin: 20px;
   display: block;
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.07em;
@@ -49,5 +49,18 @@ header ul li {
   /* or 178% */
   letter-spacing: 0.015em;
   color: black;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: black;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+header ul li a:hover {
+  color: grey;
 }
 /*# sourceMappingURL=Header.css.map */
