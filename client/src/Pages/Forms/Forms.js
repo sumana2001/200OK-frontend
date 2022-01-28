@@ -44,14 +44,12 @@ const Forms = () => {
             }
         )
 
-        var url="http://127.0.0.1:8000/addHosp/"
-
+        var url="http://127.0.0.1:8000/addHosp/";
+        console.log(hospital);
         const requestOptions = {
             method: 'POST',
             headers: { 
                         'Content-Type': 'application/json',
-                        // 'withCredentials': 'true',
-                        // 'Access-Control-Allow-Credentials': 'true',
                      },
             body: JSON.stringify(hospital)
         };
