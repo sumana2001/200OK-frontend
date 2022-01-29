@@ -15,7 +15,7 @@ const Header = () => {
                     <li>GITHUB</li>
                 </ul>
             </div>
-            <h3><a href='https://hospitalapi200ok.herokuapp.com/hospital/admin'>Admin</a></h3>
+            <h3><a href='https://hospitalapi200ok.herokuapp.com/admin'>Admin</a></h3>
         </header>
         </>
      );
