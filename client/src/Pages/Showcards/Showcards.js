@@ -38,6 +38,7 @@ const Showcards = (props) => {
         var url = "https://hospitalapi200ok.herokuapp.com/hospital/";
         if(state||district||pin||govt||covid||army)
             url=url.concat(state,district,pin,govt,covid,army);
+        alert(url);
         fetch(url).then((res) => {
             return res.json();
         }).then((res) => {
@@ -84,6 +85,8 @@ const Showcards = (props) => {
                             setDistrict(props.district);
                             setpin(props.pin);
                             setState(props.state);
+
+                            console.log(state);
                             
                             fetch_hospital();
                             }}>APPLY FILTERS</button>
@@ -91,7 +94,6 @@ const Showcards = (props) => {
                 </div>
             </div>
             <Cards items={filter?item:props.items} />
-
         </div>
     );
 }
