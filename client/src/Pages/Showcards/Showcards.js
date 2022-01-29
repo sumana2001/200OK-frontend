@@ -4,16 +4,16 @@ import { useState } from 'react';
 
 const Showcards = (props) => {
 
-    const [state,setState]=useState("");
-    const [district,setDistrict]=useState("");
-    const [pin,setpin]=useState("");
+    const [state, setState] = useState("");
+    const [district, setDistrict] = useState("");
+    const [pin, setpin] = useState("");
 
-    const [filter,setFilter]=useState(false);
+    const [filter, setFilter] = useState(false);
 
-    const [covid,setCovid]=useState("");
-    const [army,setArmy]=useState("");
-    const [govt,setGovt]=useState("");
-    const [item,setItem]=useState(props.items);
+    const [covid, setCovid] = useState("");
+    const [army, setArmy] = useState("");
+    const [govt, setGovt] = useState("");
+    const [item, setItem] = useState(props.items);
 
     const [display, setDisplay] = useState({
         display: 'none'
@@ -36,8 +36,8 @@ const Showcards = (props) => {
 
     function fetch_hospital() {
         var url = "https://hospitalapi200ok.herokuapp.com/hospital/";
-        if(state||district||pin||govt||covid||army)
-            url=url.concat("?",state,district,pin,govt,covid,army);
+        if (state || district || pin || govt || covid || army)
+            url = url.concat("?", state, district, pin, govt, covid, army);
         alert(url);
         fetch(url).then((res) => {
             return res.json();
@@ -58,43 +58,53 @@ const Showcards = (props) => {
                     <button onClick={() => { change_display() }}>FILTERS</button>
                     <div style={display} className='filter'>
                         <ul>
-                            <li>Covid: YES<input type="radio" autoComplete="off" onChange={()=>{
+                            <li>
+                            <label>
+                                Covid: YES<input type="radio" autoComplete="off" onChange={() => {
                                 setCovid("covid=true&");
-                                }} name="typeGP" />
+                            }} name="typeGP" />
                                 NO
-                                <input type="radio" autoComplete="off" onChange={()=>{
-                                setCovid("covid=false&");
-                                }} name="typeGP" /></li>
-                            <li>Army: YES<input type="radio" autoComplete="off" onChange={()=>{
-                                setArmy("army=true&");
+                                <input type="radio" autoComplete="off" onChange={() => {
+                                    setCovid("covid=false&");
                                 }} name="typeGP" />
+                                </label>
+                                </li>
+                            <li><label>
+                                Army: YES<input type="radio" autoComplete="off" onChange={() => {
+                                    setArmy("army=true&");
+                                }} name="army" />
                                 NO
-                                <input type="radio" autoComplete="off" onChange={()=>{
-                                setArmy("army=false&");
-                                }} name="typeGP" /></li>
-                            <li>Government: YES<input type="radio" autoComplete="off" onChange={()=>{
+                                <input type="radio" autoComplete="off" onChange={() => {
+                                    setArmy("army=false&");
+                                }} name="army" />
+                            </label>
+                            </li>
+                            <li>
+                            <label>
+                                Government: YES<input type="radio" autoComplete="off" onChange={() => {
                                 setGovt("typeGP=true&");
-                                }} name="typeGP" />
+                            }} name="govt" />
                                 NO
-                                <input type="radio" autoComplete="off" onChange={()=>{
-                                setGovt("typeGP=false&");
-                                }} name="typeGP" />
+                                <input type="radio" autoComplete="off" onChange={() => {
+                                    setGovt("typeGP=false&");
+                                }} name="govt" />
+                                </label>
                             </li>
                         </ul>
-                        <button onClick={()=>{
+                        <button onClick={() => {
                             setFilter(true);
                             setDistrict(props.district);
                             setpin(props.pin);
                             setState(props.state);
 
                             console.log(state);
-                            
+
                             fetch_hospital();
-                            }}>APPLY FILTERS</button>
+                        }}>APPLY FILTERS</button>
                     </div>
                 </div>
             </div>
-            <Cards items={filter?item:props.items} />
+            <Cards items={filter ? item : props.items} />
         </div>
     );
 }
