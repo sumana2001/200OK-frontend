@@ -1,0 +1,91 @@
+.body{
+    margin-top: 20px;
+    padding-left: 60px;
+    display: flex;
+    justify-content: center;
+    .left{
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+        justify-content: center;
+        padding: 4%;
+
+        h1{
+            font-family: Anton;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 42px;
+            line-height: 64px;
+            /* or 133% */
+
+            letter-spacing: 0.07em;
+            font-feature-settings: 'liga' off;
+            color: #6D7A4C;
+        }
+
+        table{
+            tr{
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 32px;
+                /* or 178% */
+
+                letter-spacing: 0.015em;
+
+                color: #757575;
+                input{
+                    font-family: 'Roboto',sans-serif;
+                    font-style: normal;
+                    font-weight: normal;
+                    text-align: center;
+                    font-size: 16px;
+
+                    margin-left: 5px;
+
+                    background: #F1F0EC;
+                    border: 2px solid #757575;
+                    border-radius: 11px;
+                    
+                    color: #757575
+                }
+            }
+        }
+
+        button{
+            background: #F1F0EC;
+            border: 2px solid #757575;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.22);
+            border-radius: 11px;
+            
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            color: #757575;
+            /* or 178% */
+
+            text-align: center;
+            letter-spacing: 0.015em;
+            
+            margin: auto;
+            margin-top: 2%;
+            width: 140px;
+            height: 35px;
+            transform: translateX(-130px);
+
+            cursor: pointer;
+        }
+    }
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50vw;
+        img{
+            height: 300px;
+        }
+    }
+
+}
