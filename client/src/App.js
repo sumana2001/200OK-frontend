@@ -3,6 +3,7 @@ import Header from "./Pages/Header/Header";
 import './Resources/css/Main.css';
 import Forms from "./Pages/Forms/Forms";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Updatehospital from "./Pages/UpdateHospital/UpdateHospital";
 
 function App() {
   const margin={
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Body />}></Route>
             <Route path="/addhospital" element={<Forms />}></Route>
+            <Route path="/updatehospital" element={<Updatehospital />}></Route>
           </Routes>
         </BrowserRouter>
       </div>

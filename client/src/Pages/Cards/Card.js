@@ -9,6 +9,14 @@ const Card = (props) => {
             <div className="card">
                 <div className='left'>
                     <h1>{item.name}</h1>
+                    <div>
+                        <span className='subtitle'>
+                        ID :
+                        </span>
+                        <span className='description'>
+                            {item.id}
+                        </span>
+                    </div>
                     <div className='speciality'>
                         <div className='subtitle'>
                             Speciality  :
@@ -19,7 +27,7 @@ const Card = (props) => {
                     </div> <br />
                     <div className='type'>
                         <span className='subtitle'>Type Of Hospital :</span>
-                        <span className='description'> Public/Private</span>
+                        <span className='description'> {item.typeGP?"Government":"Private"}</span>
                     </div>
                     <div className='cost'>
                         <span className='subtitle'>
