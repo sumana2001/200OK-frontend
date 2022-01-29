@@ -4,7 +4,7 @@
 </p>
 
 ## What is it? 💡
-This is a web application used for searching available Hospitals developed by using Hospital API which was created with the help of POSTMAN.<br/>
+This web application was created during the API Fest 2022 by team 200OK which helps the user search for hospitals across India based on a variety of parameters. We created a Hospital API with the help of Postman to create a working prototype.<br/>
 
 The Hospital API features searching by applying the following filters:<br/>
 -State<br/>
