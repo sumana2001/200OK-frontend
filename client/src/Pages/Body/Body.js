@@ -14,11 +14,11 @@ const Body = () => {
 
 
 
-    function fetch_hospital() {
+    async function fetch_hospital() {
         var url = "https://hospitalapi200ok.herokuapp.com/hospital/";
         if(state||district||pin)
             url=url.concat("?",state,district,pin);
-        fetch(url).then((res) => {
+        await fetch(url).then((res) => {
             return res.json();
         }).then((res) => {
             setDataisloaded(true);
