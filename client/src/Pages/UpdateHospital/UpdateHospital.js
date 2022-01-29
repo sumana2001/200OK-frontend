@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './css/Forms.css'
 const Updatehospital = () => {
 
-    const [hospital, setHopsital] = useState();
+    const [hospital, setHopsital] = useState({});
 
     const [id, setId]=useState();
     const [iddelete, setIddelete]=useState();
