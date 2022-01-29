@@ -4,7 +4,18 @@
 </p>
 
 ## What is it? 💡
-/* Add here */
+This is a web application used for searching available Hospitals developed by using Hospital API which was created with the help of POSTMAN.
+
+The Hospital API features searching by applying the following filters:
+-State
+-District
+-Pincode
+-Whether it is a COVID facilitated hospital 
+-Whether it is an Army Empanelled Hospital
+-Whether it is funded by Government or Private
+
+The Hospital API can also be used to add or delete a hospital from the database.
+We can also update information like Available beds through this API.
 
 ## Team ✨
 <table>
