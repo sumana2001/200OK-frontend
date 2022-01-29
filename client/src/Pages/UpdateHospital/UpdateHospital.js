@@ -6,6 +6,7 @@ const Updatehospital = () => {
     const [hospital, setHopsital] = useState();
 
     const [id, setId]=useState();
+    const [iddelete, setIddelete]=useState();
     const [name, setName] = useState("");
     const [speciality, setSpeciality] = useState("");
     const [costWard, setCostWard] = useState(0);
@@ -60,10 +61,37 @@ const Updatehospital = () => {
         })
 
     }
+
+    function delete_request(){ 
+        setUrl(`http://127.0.0.1:8000/hospital/${iddelete}`);
+    }
+
+    function delete_hospital() {
+
+        const requestOptions = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(hospital)
+        };
+
+        alert("deleting");
+
+        fetch(url, requestOptions).then((res) => {
+            console.log(res);
+            if(res.ok){
+                alert('deleted');
+            }
+        })
+
+    }
+
+
     return (
     <>
         <div className='form'>
-            <h1>UPDATE HOSPITAL</h1>
+            <h1>EDIT HOSPITAL</h1>
             <table>
                 <tr>
                     <td>ID:</td>
@@ -221,7 +249,23 @@ const Updatehospital = () => {
             {hospital ? <button onClick={() => {
                 add_hospital();
             }}>Submit</button> : ''}
-
+            <h1>DELETE HOSPITAL</h1>
+            <table>
+            <tr>
+                    <td>ID:</td>
+                    <td> <input type="text" name="Name" autoComplete="off" placeholder='ID(to be deleted)' onChange={
+                            (e) => {
+                                setIddelete(e.target.value);
+                            }
+                        } /></td>
+                </tr>
+            </table>
+            <button onClick={() => {
+                delete_request();
+            }}>Delete Request</button>
+            {iddelete ? <button onClick={() => {
+                delete_hospital();
+            }}>Submit</button> : ''}
         </div>
     </>
     )
