@@ -1,9 +1,9 @@
 import React from 'react'
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 import './css/Forms.css'
 const Forms = () => {
     
-    const [hospital,setHopsital]=useState();
+    const [hospital,setHopsital]=useState({});
     
     const [name,setName]=useState("");
     const [speciality,setSpeciality]=useState("");
