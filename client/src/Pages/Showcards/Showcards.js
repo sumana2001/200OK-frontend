@@ -4,14 +4,16 @@ import { useState } from 'react';
 
 const Showcards = (props) => {
 
-    const state=props.state;
-    const district=props.district;
-    const pin=this.props.pin;
+    const [state,setState]=useState("");
+    const [district,setDistrict]=useState("");
+    const [pin,setpin]=useState("");
+
+    const [filter,setFilter]=useState(false);
 
     const [covid,setCovid]=useState("");
     const [army,setArmy]=useState("");
     const [govt,setGovt]=useState("");
-
+    const [item,setItem]=useState(props.items);
 
     const [display, setDisplay] = useState({
         display: 'none'
@@ -39,8 +41,8 @@ const Showcards = (props) => {
         fetch(url).then((res) => {
             return res.json();
         }).then((res) => {
-            setDataisloaded(true);
-            setItems(res);
+            setItem(res);
+            setFilter(true);
             console.log(res);
         })
     }
@@ -54,8 +56,20 @@ const Showcards = (props) => {
                     <button onClick={() => { change_display() }}>FILTERS</button>
                     <div style={display} className='filter'>
                         <ul>
-                            <li>Covid</li>
-                            <li>Army</li>
+                            <li>Covid: YES<input type="radio" autoComplete="off" onChange={()=>{
+                                setCovid("?covid=true");
+                                }} name="typeGP" />
+                                NO
+                                <input type="radio" autoComplete="off" onChange={()=>{
+                                setCovid("?covid=false");
+                                }} name="typeGP" /></li>
+                            <li>Army: YES<input type="radio" autoComplete="off" onChange={()=>{
+                                setArmy("?army=true");
+                                }} name="typeGP" />
+                                NO
+                                <input type="radio" autoComplete="off" onChange={()=>{
+                                setArmy("?army=false");
+                                }} name="typeGP" /></li>
                             <li>Government: YES<input type="radio" autoComplete="off" onChange={()=>{
                                 setGovt("?typeGP=true");
                                 }} name="typeGP" />
@@ -65,10 +79,18 @@ const Showcards = (props) => {
                                 }} name="typeGP" />
                             </li>
                         </ul>
+                        <button onClick={()=>{
+                            setFilter(true);
+                            setDistrict(props.district);
+                            setpin(props.pin);
+                            setState(props.state);
+                            
+                            fetch_hospital();
+                            }}>APPLY FILTERS</button>
                     </div>
                 </div>
             </div>
-            <Cards items={props.items} />
+            <Cards items={filter?item:props.items} />
 
         </div>
     );

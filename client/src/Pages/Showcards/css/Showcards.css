@@ -60,4 +60,12 @@
   letter-spacing: 0.04em;
   color: #6D7A4C;
 }
+
+.Showcards .filters .filter button {
+  border: none;
+  font-family: Anton;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+}
 /*# sourceMappingURL=Showcards.css.map */
