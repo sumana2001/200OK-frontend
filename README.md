@@ -24,7 +24,6 @@ We can also update information like Available beds through this API.<br/>
     <td align="center"><a href="https://github.com/anuragrawat015"><img src="https://avatars.githubusercontent.com/u/68148139?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anurag Rawat</b></sub></a></td>
     <td align="center"><a href="https://github.com/bijoyvbabu123"><img src="https://avatars.githubusercontent.com/u/73835543?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bijoy V Babu</b></sub></a></td>
     <td align="center"><a href="https://github.com/navya1819"><img src="https://avatars.githubusercontent.com/u/93279113?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Navya Nihal</b></sub></a></td>
-    <td align="center"><a href="https://github.com/rushi19383"><img src="https://avatars.githubusercontent.com/u/73731585?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rushikesh Kantule</b></sub></a></td>
     <td align="center"><a href="https://github.com/sujal-sharma"><img src="https://avatars.githubusercontent.com/u/27073280?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sujal Sharma</b></sub></a></td>
   </tr>
 </table>
@@ -45,7 +44,19 @@ npm install -g create-react-app
 ```
 
 ### Install Django
-/* Add here */
+Django is a Python web framework, thus requiring Python to be installed on your machine.To install Python on your machine go to https://python.org/download/, and download a Windows MSI installer for Python
+In the command prompt, execute the following command: 
+```bash
+pip install django
+```
+ This will download and install Django.
+
+
+After the installation has completed, you can verify your Django installation by executing
+```bash
+ django-admin --version 
+ ```
+ in the command prompt.
 
 ## Cloning and Running the Application in local 💻
 
@@ -68,13 +79,30 @@ npm start
 The Application Runs on **localhost:3000**
 
 ### To spin up the backend server
-/* Add here */
+Clone the project in localhost
+```bash
+git clone https://github.com/sumana2001/200OK-backend.git
+```
+It is necessary to create the initial migration for the models to synchronize the SQLite database for the first time.
+Type these commands in the terminal
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
 
-/* Add links */
+In order to run the application in development mode type the following command
+
+```bash
+python manage.py runserver
+```
+
+The Application Runs on **localhost:8000**
+
+
 ## Important Links 🔴
 1. <a href="">Youtube</a>
-2. <a href="">Landing Page</a>
-3. <a href="">Deployed Backend</a>
+2. <a href="https://200-ok-frontend.vercel.app/">Landing Page</a>
+3. <a href="https://hospitalapi200ok.herokuapp.com/hospital">Deployed Backend</a>
 4. <a href="https://github.com/sumana2001/200OK-frontend">Frontent Repository</a>
 5. <a href="https://github.com/sumana2001/200OK-backend">Backend Repository</a>
 
