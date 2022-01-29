@@ -44,7 +44,7 @@ const Updatehospital = () => {
         );
     }
 
-    function add_hospital() {
+    async function add_hospital() {
 
         const requestOptions = {
             method: 'PUT',
@@ -56,7 +56,7 @@ const Updatehospital = () => {
 
         alert("updaing");
 
-        fetch(url, requestOptions).then((res) => {
+        await fetch(url, requestOptions).then((res) => {
             if(res.ok){
                 alert('updated');
             }
@@ -68,7 +68,7 @@ const Updatehospital = () => {
         setUrl(`https://hospitalapi200ok.herokuapp.com/hospital/${iddelete}`);
     }
 
-    function delete_hospital() {
+    async function delete_hospital() {
 
         const requestOptions = {
             method: 'DELETE',
@@ -80,7 +80,7 @@ const Updatehospital = () => {
 
         alert("deleting");
 
-        fetch(url, requestOptions).then((res) => {
+        await fetch(url, requestOptions).then((res) => {
             console.log(res);
             if(res.ok){
                 alert('deleted');

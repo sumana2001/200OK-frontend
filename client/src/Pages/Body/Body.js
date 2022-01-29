@@ -17,7 +17,7 @@ const Body = () => {
     function fetch_hospital() {
         var url = "https://hospitalapi200ok.herokuapp.com/hospital/";
         if(state||district||pin)
-            url=url.concat(state,district,pin);
+            url=url.concat("?",state,district,pin);
         fetch(url).then((res) => {
             return res.json();
         }).then((res) => {
@@ -41,7 +41,7 @@ const Body = () => {
                                 <input type="text" name="State" onChange={
                                     (e)=>{
                                         if(e.target.value)
-                                            setState("?state="+e.target.value+"&");
+                                            setState("state="+e.target.value+"&");
                                         else
                                             setState('');
                                     }
@@ -56,7 +56,7 @@ const Body = () => {
                                 <input type="text" name="District" onChange={
                                     (e)=>{
                                         if(e.target.value)
-                                            setDistrict("?district="+e.target.value+"&");
+                                            setDistrict("district="+e.target.value+"&");
                                         else
                                             setDistrict('');
                                     }
@@ -71,7 +71,7 @@ const Body = () => {
                                 <input type="text" name="Pincode" onChange={
                                     (e)=>{
                                         if(e.target.value)
-                                            setpin("?pincode="+e.target.value+"&");
+                                            setpin("pincode="+e.target.value+"&");
                                         else
                                             setpin('');
                                     }

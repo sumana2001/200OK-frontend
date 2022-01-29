@@ -40,7 +40,7 @@ const Forms = () => {
         );
     }
 
-    function add_hospital() {
+    async function add_hospital() {
         
         var url="https://hospitalapi200ok.herokuapp.com/hospital/";
         const requestOptions = {
@@ -53,7 +53,7 @@ const Forms = () => {
 
         alert('adding');
 
-        fetch(url,requestOptions).then((res)=>{
+        await fetch(url,requestOptions).then((res)=>{
             console.log(res);
             if(res.ok){
                 alert("added");

@@ -37,13 +37,14 @@ const Showcards = (props) => {
     function fetch_hospital() {
         var url = "https://hospitalapi200ok.herokuapp.com/hospital/";
         if(state||district||pin||govt||covid||army)
-            url=url.concat(state,district,pin,govt,covid,army);
+            url=url.concat("?",state,district,pin,govt,covid,army);
         alert(url);
         fetch(url).then((res) => {
             return res.json();
         }).then((res) => {
             setItem(res);
             setFilter(true);
+            console.log("fetching again");
             console.log(res);
         })
     }
@@ -58,25 +59,25 @@ const Showcards = (props) => {
                     <div style={display} className='filter'>
                         <ul>
                             <li>Covid: YES<input type="radio" autoComplete="off" onChange={()=>{
-                                setCovid("?covid=true");
+                                setCovid("covid=true&");
                                 }} name="typeGP" />
                                 NO
                                 <input type="radio" autoComplete="off" onChange={()=>{
-                                setCovid("?covid=false");
+                                setCovid("covid=false&");
                                 }} name="typeGP" /></li>
                             <li>Army: YES<input type="radio" autoComplete="off" onChange={()=>{
-                                setArmy("?army=true");
+                                setArmy("army=true&");
                                 }} name="typeGP" />
                                 NO
                                 <input type="radio" autoComplete="off" onChange={()=>{
-                                setArmy("?army=false");
+                                setArmy("army=false&");
                                 }} name="typeGP" /></li>
                             <li>Government: YES<input type="radio" autoComplete="off" onChange={()=>{
-                                setGovt("?typeGP=true");
+                                setGovt("typeGP=true&");
                                 }} name="typeGP" />
                                 NO
                                 <input type="radio" autoComplete="off" onChange={()=>{
-                                setGovt("?typeGP=false");
+                                setGovt("typeGP=false&");
                                 }} name="typeGP" />
                             </li>
                         </ul>
