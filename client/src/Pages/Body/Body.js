@@ -12,12 +12,15 @@ const Body = () => {
     const [district,setDistrict]=useState("");
     const [pin,setpin]=useState("");
 
-    function fetch_hospital() {
-        var url = "http://127.0.0.1:8000/hospital/";
-        if(state||district||pin)
-            url=url.concat(state,district,pin);
+    const [covid,setCovid]=useState("");
+    const [army,setArmy]=useState("");
+    const [govt,setGovt]=useState("");
 
-        console.log(url);
+
+    function fetch_hospital() {
+        var url = "https://hospitalapi200ok.herokuapp.com/hospital/";
+        if(state||district||pin||govt||covid||army)
+            url=url.concat(state,district,pin,govt,covid,army);
         fetch(url).then((res) => {
             return res.json();
         }).then((res) => {
@@ -85,7 +88,7 @@ const Body = () => {
                     <img src={illustation} alt='image_loading_error'></img>
                 </div>
             </div>
-            {Dataisloaded && <Showcards Dataisloaded={Dataisloaded} items={items} />}
+            {Dataisloaded && <Showcards govt={govt} setGovt={setGovt} army={army} setArmy={setArmy} covid={covid} setCovid={setCovid} Dataisloaded={Dataisloaded} items={items} />}
         </>
     );
 }

@@ -42,7 +42,7 @@ const Forms = () => {
 
     function add_hospital() {
         
-        var url="http://127.0.0.1:8000/hospital/";
+        var url="https://hospitalapi200ok.herokuapp.com/hospital/";
         const requestOptions = {
             method: 'POST',
             headers: { 
@@ -51,12 +51,15 @@ const Forms = () => {
             body: JSON.stringify(hospital)
         };
 
-        console.log('fetching');
+        alert('adding');
 
         fetch(url,requestOptions).then((res)=>{
             console.log(res);
-        })
-
+            if(res.ok){
+                alert("added");
+            }
+        });
+        window.location.href='/';
     }
     return (
         <div className='form'>

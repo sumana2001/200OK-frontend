@@ -21,10 +21,10 @@ const Updatehospital = () => {
     const [district, setDistrict] = useState("");
     const [state, setState] = useState("");
     
-    const [url,setUrl]=useState("http://127.0.0.1:8000/hospital/")
+    const [url,setUrl]=useState("https://hospitalapi200ok.herokuapp.com/hospital/")
 
     function set_hospital() {
-        setUrl(`http://127.0.0.1:8000/hospital/${id}`);
+        setUrl(`https://hospitalapi200ok.herokuapp.com/hospital/${id}`);
         setHopsital(
             {
                 "name": name,
@@ -54,16 +54,18 @@ const Updatehospital = () => {
             body: JSON.stringify(hospital)
         };
 
-        console.log("putting");
+        alert("updaing");
 
         fetch(url, requestOptions).then((res) => {
-            console.log(res);
+            if(res.ok){
+                alert('updated');
+            }
         })
-
+        window.location.href='/';
     }
 
     function delete_request(){ 
-        setUrl(`http://127.0.0.1:8000/hospital/${iddelete}`);
+        setUrl(`https://hospitalapi200ok.herokuapp.com/hospital/${iddelete}`);
     }
 
     function delete_hospital() {
@@ -83,8 +85,8 @@ const Updatehospital = () => {
             if(res.ok){
                 alert('deleted');
             }
-        })
-
+        });
+        window.location.href='/';
     }
 
 

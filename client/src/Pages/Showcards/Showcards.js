@@ -32,11 +32,16 @@ const Showcards = (props) => {
                     <button onClick={() => { change_display() }}>FILTERS</button>
                     <div style={display} className='filter'>
                         <ul>
-                            <li>State</li>
-                            <li>District</li>
                             <li>Covid</li>
                             <li>Army</li>
-                            <li>Rating</li>
+                            <li>Government: YES<input type="radio" autoComplete="off" onChange={(e)=>{
+                                props.setGovt("?typeGP=true");
+                                }} name="typeGP" />
+                                NO
+                                <input type="radio" autoComplete="off" onChange={(e)=>{
+                                props.setGovt("?typeGP=false");
+                                }} name="typeGP" />
+                            </li>
                         </ul>
                     </div>
                 </div>
